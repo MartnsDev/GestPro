@@ -21,18 +21,22 @@
 ## 📂 Estrutura do Projeto
 
 ```
-gestpro-backend/
-┣ src/main/java/br/com/gestpro/gestpro_backend
-┃ ┣ infra/ # Configurações de segurança, JWT, Swagger, CORS, exceptions
-┃ ┣ model/ # Entidades (JPA)
-┃ ┣ dto/ # Objetos de transferência de dados (request/response)
-┃ ┣ service/ # Regras de negócio
-┃ ┣ repository/ # Interfaces JPA
-┃ ┣ controller/ # Endpoints REST
-┃ ┗ GestproBackendApplication.java # Classe principal
-┗ src/main/resources
-┣ application.properties # Configurações da aplicação
-┗ schema.sql / data.sql # Scripts opcionais para inicialização
+api/
+ ├─ controller/   → Controllers REST (endpoints)
+ └─ dto/          → Data Transfer Objects
+
+domain/
+ ├─ model/        → Entidades/Models do banco
+ ├─ repository/   → Interfaces JPA (CRUD)
+ └─ service/      → Regras de negócio
+
+infra/
+ ├─ configs/      → Configurações (CORS, etc)
+ ├─ swagger/      → Configuração do Swagger/OpenAPI
+ ├─ filters/      → Filtros de requisição, JWT, etc
+ ├─ exceptions/   → Tratamento de exceções customizadas
+ ├─ security/     → Segurança (Spring Security, JWT, roles)
+ └─ util/         → Helpers, validadores, funções genéricas
 ```
 
 ---
