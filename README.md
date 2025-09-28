@@ -10,6 +10,7 @@
 - **Spring Boot 3**
 - **Spring Data JPA (Hibernate)**
 - **Spring Security + JWT**
+- **Spring Security OAuth2 / Auth2**
 - **Bean Validation**
 - **MySQL (Banco de Produção)**
 - **H2 Database (Testes)**
