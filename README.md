@@ -38,12 +38,12 @@ Cada pasta possui seu próprio README detalhado com instruções de configuraç�
 
 ![GestPro - tela de login](https://raw.githubusercontent.com/MartnsDev/GestPro/69290174ffd5d02834dfebe5773aa3dd2bf2d8b3/gestpro-login.png)
 
+Dashboard
+![GestPro - Dashboard](https://raw.githubusercontent.com/MartnsDev/GestPro/1ebb5a1c26623c3a576769f9026eda1ec4f2d5cb/gestpro-dashboard.png)
 Cadastro
 
 Redefinir Senha
 
-Dashboard
-![GestPro - Dashboard](https://raw.githubusercontent.com/MartnsDev/GestPro/1ebb5a1c26623c3a576769f9026eda1ec4f2d5cb/gestpro-dashboard.png)
 
 🔐 Funcionalidades Principais
 ```
