@@ -57,7 +57,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8080
 ```
 4️⃣ Rodar o servidor de desenvolvimento
 ```
-pnpm dev
+npm run dev
 ```
 Acesse o app em:
 ```
