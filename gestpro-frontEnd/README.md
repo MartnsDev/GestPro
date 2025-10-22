@@ -1,131 +1,139 @@
-# GestPro - Sistema de Gestão para Mercados
+# 🛒 GestPro Frontend
 
-Sistema completo de gestão para mercados e lojas, desenvolvido com Next.js (frontend) e Spring Boot (backend).
+Interface do **GestPro**, um sistema completo de gestão para mercados e lojas, desenvolvido com **Next.js 14+** (App Router) e integração com o backend em **Spring Boot 3**.
 
-## 🚀 Tecnologias
+> 🔗 Repositório do backend: [GestPro Backend](https://github.com/MartnsDev/GestPro/tree/main/backend)
 
-### Frontend
-- Next.js 14+ (App Router)
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
+---
 
-### Backend
+## 🚀 Tecnologias Utilizadas
+
+### ⚛️ Frontend
+- [Next.js 14+ (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Lucide Icons](https://lucide.dev/)
+
+### 🖥️ Backend (integração)
 - Java 17+
 - Spring Boot 3.x
-- Spring Security
-- JWT Authentication
-- OAuth2 (Google Login)
+- Spring Security + JWT
+- OAuth2 (Login com Google)
 - MySQL
+
+---
 
 ## 📋 Pré-requisitos
 
-- Node.js 18+ e pnpm
-- Java 17+
-- MySQL 8+
+Certifique-se de ter instalado:
 
-## 🔧 Configuração
+- **Node.js 18+**
+- **pnpm** (ou npm/yarn)
+- Backend em execução (porta padrão `8080`)
 
-### Frontend
+---
 
-1. Clone o repositório
-2. Instale as dependências:
-\`\`\`bash
+## ⚙️ Configuração e Execução
+
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/MartnsDev/GestPro.git
+cd GestPro/frontend
+2️⃣ Instalar dependências
+bash
+Copiar código
 pnpm install
-\`\`\`
+3️⃣ Configurar variáveis de ambiente
+Copie o arquivo de exemplo:
 
-3. Configure as variáveis de ambiente:
-\`\`\`bash
+bash
+Copiar código
 cp .env.local.example .env.local
-\`\`\`
+Edite o arquivo .env.local e configure a URL da API:
 
-Edite `.env.local` e configure:
-\`\`\`
+bash
+Copiar código
 NEXT_PUBLIC_API_URL=http://localhost:8080
-\`\`\`
-
-4. Execute o projeto:
-\`\`\`bash
+4️⃣ Rodar o servidor de desenvolvimento
+bash
+Copiar código
 pnpm dev
-\`\`\`
+Acesse o app em:
+👉 http://localhost:3000
 
-O frontend estará disponível em `http://localhost:3000`
+📁 Estrutura de Pastas
+bash
+Copiar código
+frontend/
+├── app/                     # Páginas (App Router)
+│   ├── page.tsx            # Tela de Login
+│   ├── cadastro/           # Página de Cadastro
+│   ├── dashboard/          # Painel principal
+│   └── esqueceu-senha/     # Recuperação de senha
+├── components/              # Componentes reutilizáveis
+│   ├── auth/               # Formulários de autenticação
+│   └── ui/                 # Componentes do shadcn/ui
+├── lib/                     # Funções utilitárias
+│   ├── api.ts              # Comunicação com o backend
+│   └── auth.ts             # Funções de autenticação JWT
+├── public/                  # Arquivos estáticos
+└── styles/                  # Estilos globais e customizados
+🔐 Autenticação
+O sistema suporta dois métodos de login:
 
-### Backend
+Email e senha
 
-1. Configure o banco de dados MySQL
-2. Configure as variáveis de ambiente no `application.properties`:
-   - `spring.datasource.url`
-   - `spring.datasource.username`
-   - `spring.datasource.password`
-   - `jwt.secret`
-   - Credenciais do Google OAuth2
+Login com Google (OAuth2)
 
-3. Execute o backend:
-\`\`\`bash
-./mvnw spring-boot:run
-\`\`\`
+A autenticação utiliza JWT tokens armazenados em cookies HTTP-only, garantindo segurança e persistência entre sessões.
 
-O backend estará disponível em `http://localhost:8080`
+🎨 Design System
+Cores principais:
 
-## 📁 Estrutura do Projeto
+Verde: #10b981
 
-\`\`\`
-gestpro/
-├── app/                    # Páginas Next.js
-│   ├── page.tsx           # Login
-│   ├── cadastro/          # Cadastro
-│   ├── dashboard/         # Dashboard
-│   └── esqueceu-senha/    # Recuperação de senha
-├── components/            # Componentes React
-│   └── ui/               # Componentes shadcn/ui
-├── lib/                   # Utilitários
-│   ├── api.ts            # Funções de API
-│   └── auth.ts           # Funções de autenticação
-└── public/               # Arquivos estáticos
-\`\`\`
+Azul escuro: #0a1929
 
-## 🔐 Autenticação
+Componentes: shadcn/ui
 
-O sistema suporta dois métodos de autenticação:
+Totalmente responsivo (desktop, tablet e mobile)
 
-1. **Login tradicional**: Email e senha
-2. **Login com Google**: OAuth2
+Ícones: Lucide React
 
-A autenticação é gerenciada via JWT tokens armazenados em cookies HTTP-only.
+📡 Principais Endpoints da API
+Autenticação
+Método	Endpoint	Descrição
+POST	/auth/login	Login com email e senha
+POST	/auth/cadastro	Cadastro de novo usuário
+GET	/oauth2/authorization/google	Login com Google
+POST	/auth/esqueceu-senha	Solicitar redefinição de senha
+POST	/auth/redefinir-senha	Redefinir senha
+POST	/auth/logout	Logout do usuário
 
-## 🎨 Design System
+Usuário
+Método	Endpoint	Descrição
+GET	/api/usuario	Retorna dados do usuário autenticado
 
-O projeto utiliza um design system consistente com:
-- Cores principais: Verde (#10b981) e Azul escuro (#0a1929)
-- Componentes shadcn/ui
-- Responsivo para desktop, tablet e mobile
+🧩 Próximos Passos
+ Implementar módulo de Produtos
 
-## 📝 Endpoints da API
+ Implementar módulo de Estoque
 
-### Autenticação
-- `POST /auth/login` - Login com email/senha
-- `POST /auth/cadastro` - Cadastro de novo usuário
-- `GET /oauth2/authorization/google` - Iniciar login com Google
-- `POST /auth/esqueceu-senha` - Solicitar código de recuperação
-- `POST /auth/redefinir-senha` - Redefinir senha
-- `POST /auth/logout` - Logout
+ Implementar módulo de Vendas
 
-### Usuário
-- `GET /api/usuario` - Obter dados do usuário autenticado
+ Implementar módulo de Clientes
 
-## 🚧 Próximos Passos
+ Implementar módulo de Relatórios
 
-- [ ] Implementar módulo de Produtos
-- [ ] Implementar módulo de Estoque
-- [ ] Implementar módulo de Vendas
-- [ ] Implementar módulo de Clientes
-- [ ] Implementar módulo de Relatórios
-- [ ] Implementar módulo de Configurações
-- [ ] Adicionar testes unitários e de integração
-- [ ] Implementar sistema de notificações em tempo real
-- [ ] Adicionar suporte a múltiplas lojas
+ Adicionar testes unitários e de integração
 
-## 📄 Licença
+ Adicionar notificações em tempo real
 
+ Suporte a múltiplas lojas
+
+📜 Licença
 Este projeto está sob a licença MIT.
+Sinta-se à vontade para usar, modificar e contribuir.
+
+Feito com 💚 por Matheus Martins (MartnsDev)
