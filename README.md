@@ -59,8 +59,8 @@ Dashboard com informações do usuário
 Backend totalmente integrado com frontend Next.js
 ```
 📡 Links Úteis
-```
-Frontend README
+
+[Frontend README](https://github.com/MartnsDev/GestPro/tree/e4fb6426163f44c154645ca89e9fec5c202cd5a4/gestpro-frontEnd) 
 
 Backend README
 ```
