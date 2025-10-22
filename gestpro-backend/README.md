@@ -1,119 +1,156 @@
-# 🛍️ GestPro - Backend
+# 🛠️ GestPro Backend
 
-**GestPro** é um sistema de gestão de lojas que ajuda comerciantes a organizarem seu **estoque**, controlarem **vendas** e gerenciarem **produtos** de forma simples e eficiente.
+Backend do **GestPro**, sistema completo de gestão para mercados e lojas, desenvolvido com **Java 17+** e **Spring Boot 3.x**.  
+Responsável por autenticação, gerenciamento de usuários, planos, controle de acesso e integração com o frontend.
+
+> 🔗 Repositório do frontend: [GestPro Frontend](https://github.com/MartnsDev/GestPro/tree/main/frontend)
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-- **Java 17**
-- **Spring Boot 3**
-- **Spring Data JPA (Hibernate)**
-- **Spring Security + JWT**
-- **Bean Validation**
-- **MySQL (Banco de Produção)**
-- **H2 Database (Testes)**
-- **Swagger (Documentação da API)**
-- **Lombok**
+- Java 17+
+- Spring Boot 3.x
+- Spring Security + JWT
+- OAuth2 (Login com Google)
+- MySQL 8+
+- Maven
+- Lombok
+- JUnit / Mockito (para testes)
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📋 Pré-requisitos
 
-```
-api/
- ├─ controller/   → Controllers REST (endpoints)
- └─ dto/          → Data Transfer Objects
-
-domain/
- ├─ model/        → Entidades/Models do banco
- ├─ repository/   → Interfaces JPA (CRUD)
- └─ service/      → Regras de negócio
-
-infra/
- ├─ configs/      → Configurações (CORS, etc)
- ├─ swagger/      → Configuração do Swagger/OpenAPI
- ├─ filters/      → Filtros de requisição, JWT, etc
- ├─ exceptions/   → Tratamento de exceções customizadas
- ├─ security/     → Segurança (Spring Security, JWT, roles)
- └─ util/         → Helpers, validadores, funções genéricas
-```
+- Java 17+
+- Maven
+- MySQL 8+
+- Node.js (para integração com frontend, opcional)
 
 ---
 
-## ⚙️ Configuração do Ambiente
+## ⚙️ Configuração e Execução
 
-### Pré-requisitos
-- [Java 17+](https://adoptopenjdk.net/)
-- [Maven](https://maven.apache.org/)
-- [MySQL](https://dev.mysql.com/downloads/)
-
-### Rodando o projeto localmente
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/MartnsDev/GestPro.git
-Entre no diretório:
-
-cd gestpro-backend
-
-
-Configure o banco de dados no arquivo application.properties
-
+### 1️⃣ Clone o repositório
+```
+git clone https://github.com/MartnsDev/GestPro.git
+cd GestPro/backend
+```
+2️⃣ Configure o banco de dados MySQL
+```
+Crie um banco, por exemplo gestpro_db, e configure as credenciais.
+```
+3️⃣ Configurar variáveis no application.properties ou .yml
+properties
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/gestpro_db
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.username=root
+spring.datasource.password=senha123
+jwt.secret=meuJWTsuperSecretoComMaisDe32Caracteres123!
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+# Configurações do Google OAuth2
+```
+spring.security.oauth2.client.registration.google.client-id=SEU_CLIENT_ID
+spring.security.oauth2.client.registration.google.client-secret=SEU_CLIENT_SECRET
+spring.security.oauth2.client.registration.google.scope=email,profile
+```
+4️⃣ Rodar o backend
+```
+./mvnw spring-boot:run
+O backend estará disponível em:
+👉 http://localhost:8080
+```
+📁 Estrutura de Pacotes
+```
+backend/
+├── src/main/java/br/com/gestpro/gestpro_backend
+│   ├── domain/
+│   │   ├── model/          # Entidades (Usuario, Plano, etc.)
+│   │   ├── model/enums/    # Enums: TipoPlano, StatusAcesso
+│   │   ├── repository/     # Interfaces de acesso a dados
+│   │   └── service/        # Regras de negócio e lógica de serviços
+│   ├── infra/
+│   │   ├── jwt/            # Configuração JWT, filtros e utilitários
+│   │   ├── security/       # Configuração do Spring Security e OAuth2
+│   │   └── exception/      # Tratamento de erros global
+│   └── controller/         # Endpoints REST
+└── src/main/resources/
+    └── application.properties
+```
+🔐 Autenticação
+```
+O backend suporta dois métodos de login:
+
+Login tradicional: Email e senha
+
+Login com Google: OAuth2
+
+A autenticação utiliza JWT tokens, que são enviados para o frontend via cookies HTTP-only.
+O sistema também implementa:
+
+Controle de acesso por TipoPlano (EXPERIMENTAL, ASSINANTE)
+
+Status do usuário com StatusAcesso (ATIVO, INATIVO)
+
+Controle de acesso expirado (7 dias para usuários experimentais)
+```
+📡 Principais Endpoints
+```
+Autenticação
+Método	Endpoint	Descrição
+POST	/auth/login	Login com email e senha
+POST	/auth/cadastro	Cadastro de novo usuário
+GET	/oauth2/authorization/google	Login com Google OAuth2
+POST	/auth/esqueceu-senha	Solicitar redefinição de senha
+POST	/auth/redefinir-senha	Redefinir senha
+POST	/auth/logout	Logout do usuário
+
+Usuário
+Método	Endpoint	Descrição
+GET	/api/usuario	Obter dados do usuário autenticado
+GET	/api/usuarios	Listar usuários (admin)
+```
+🎯 Principais Funcionalidades
+```
+Cadastro e login de usuários
+
+Recuperação e redefinição de senha
+
+Login com Google OAuth2
+
+Controle de acesso via JWT e cookies HTTP-only
+
+Controle de status de usuário e plano (experimental ou assinante)
+
+Integração completa com frontend Next.js
+```
+📸 Screenshots do Backend
+Como backend é API, você pode documentar com Postman / Insomnia:
+
+Login via API
+
+Cadastro via API
+
+Dashboard - Dados do usuário
+
+⚠️ Substitua essas imagens pelos prints reais de suas requisições no Postman ou Swagger.
+
+📝 Testes
+```
+Testes unitários com JUnit 5
+
+Testes de serviço com Mockito
+
+Cobertura de endpoints via Spring Boot Test
+```
+📜 Licença
+```
+Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização do autor.
+Todos os direitos reservados a Matheus Martins (MartnsDev).
+
 ```
 
-Rode a aplicação:
-```
-mvn spring-boot:run
-```
-🔐 Autenticação e Segurança
-```
 
-Login e cadastro serão feitos via JWT (Bearer Token).
-
-Cada requisição protegida deve incluir no header:
-
-Authorization: Bearer {seu_token_jwt}
-```
-
-📖 Documentação da API
-
-Após rodar a aplicação, acesse:
-```
-http://localhost:8080/swagger-ui.html
-```
-
-🛠️ Como atualizar o repositório
-
-Sempre que fizer alterações:
-```
-git add .
-git commit -m "Mensagem explicando a mudança"
-git push
-```
-
-📌 Próximos Passos
-```
-
- Implementar LoginController e CadastroController
-
- Finalizar configuração do JWT
-
- Criar entidades iniciais (Usuário, Produto, Venda)
-
- Implementar dashboard de estatísticas
-```
-
-👨‍💻 Autor
-```
-
-Projeto desenvolvido por Matheus Martins
-📌 GitHub: MartnsDev
-```
-<<<<<<< HEAD
-=======
-
->>>>>>> d3723a1 (Atualização do backend GestPro: login com Google, JWT e dashboard)
+Feito com 💚 por Matheus Martins (MartnsDev)
