@@ -80,5 +80,5 @@ Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização d
 Todos os direitos reservados a Matheus Martins (MartnsDev).
 ```
 ```
-Feito com 💚 por Matheus Martins (https://www.linkedin.com/in/matheusmartnsdev/)
+Feito com 💚 por Matheus Martins [Linkedin](https://www.linkedin.com/in/matheusmartnsdev/)
 ```
