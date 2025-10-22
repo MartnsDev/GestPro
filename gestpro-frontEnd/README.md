@@ -145,14 +145,4 @@ Todos os direitos reservados a Matheus Martins (MartnsDev).
 
 ```
 
-📸 Screenshots
-
-Login
-
-Cadastro
-
-Redefinir Senha
-
-Dashboard
-
-Feito com 💚 por Matheus Martins (MartnsDev)
+Feito com 💚 por Matheus Martins [Linkedin](https://www.linkedin.com/in/matheusmartnsdev/)
