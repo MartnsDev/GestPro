@@ -145,6 +145,7 @@ Sinta-se à vontade para usar, modificar e contribuir.
 ```
 
 📸 Screenshots
+
 Login
 
 Cadastro
