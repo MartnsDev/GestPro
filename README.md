@@ -62,8 +62,8 @@ Backend totalmente integrado com frontend Next.js
 
 [Frontend README](https://github.com/MartnsDev/GestPro/tree/e4fb6426163f44c154645ca89e9fec5c202cd5a4/gestpro-frontEnd) 
 
-Backend README
-```
+[Backend README](https://github.com/MartnsDev/GestPro/tree/a85fc18b536b9436a3f4a29e222f36499dd38729/gestpro-backend)
+
 🧩 Próximos Passos
 ```
 Implementar módulos de Produtos, Estoque, Vendas, Clientes e Relatórios
