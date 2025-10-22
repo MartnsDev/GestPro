@@ -79,6 +79,6 @@ Suporte a múltiplas lojas
 Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização do autor.
 Todos os direitos reservados a Matheus Martins (MartnsDev).
 ```
-```
+
 Feito com 💚 por Matheus Martins [Linkedin](https://www.linkedin.com/in/matheusmartnsdev/)
-```
+
