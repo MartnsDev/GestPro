@@ -126,17 +126,6 @@ Controle de status de usuário e plano (experimental ou assinante)
 
 Integração completa com frontend Next.js
 ```
-📸 Screenshots do Backend
-Como backend é API, você pode documentar com Postman / Insomnia:
-
-Login via API
-
-Cadastro via API
-
-Dashboard - Dados do usuário
-
-⚠️ Substitua essas imagens pelos prints reais de suas requisições no Postman ou Swagger.
-
 📝 Testes
 ```
 Testes unitários com JUnit 5
