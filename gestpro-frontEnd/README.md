@@ -140,8 +140,9 @@ GET	/api/usuario	Retorna dados do usuário autenticado
 ```
 📜 Licença
 ```
-Este projeto está sob a licença MIT.
-Sinta-se à vontade para usar, modificar e contribuir.
+Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização do autor.
+Todos os direitos reservados a Matheus Martins (MartnsDev).
+
 ```
 
 📸 Screenshots
