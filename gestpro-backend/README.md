@@ -3,7 +3,7 @@
 Backend do **GestPro**, sistema completo de gestão para mercados e lojas, desenvolvido com **Java 17+** e **Spring Boot 3.x**.  
 Responsável por autenticação, gerenciamento de usuários, planos, controle de acesso e integração com o frontend.
 
-> 🔗 Repositório do frontend: [GestPro Frontend](https://github.com/MartnsDev/GestPro/tree/main/frontend)
+> 🔗 Repositório do frontend: [GestPro Frontend](https://github.com/MartnsDev/GestPro/tree/71368bf65a66019599829ff285afbe9b40038fad/gestpro-frontEnd)
 
 ---
 
