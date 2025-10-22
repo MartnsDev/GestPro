@@ -43,6 +43,7 @@ Cadastro
 Redefinir Senha
 
 Dashboard
+![GestPro - Dashboard](https://raw.githubusercontent.com/MartnsDev/GestPro/1ebb5a1c26623c3a576769f9026eda1ec4f2d5cb/gestpro-dashboard.png)
 
 🔐 Funcionalidades Principais
 ```
