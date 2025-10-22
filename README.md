@@ -84,7 +84,8 @@ Implementar notificações em tempo real
 
 Suporte a múltiplas lojas
 ```
-Documentação Swagger
+#Documentação Swagger
+---
 ![Documentaçãp Swagger](https://github.com/MartnsDev/GestPro/blob/166f34bb225aab4a03638fdd8875a099e9c281f0/Documenta%C3%A7%C3%A3o-Swagger.png)
 
 📜 Licença
