@@ -40,31 +40,32 @@ Certifique-se de ter instalado:
 ```bash
 git clone https://github.com/MartnsDev/GestPro.git
 cd GestPro/frontend
+```
 2️⃣ Instalar dependências
-bash
-Copiar código
+```
 pnpm install
+```
 3️⃣ Configurar variáveis de ambiente
 Copie o arquivo de exemplo:
 
-bash
-Copiar código
+```
 cp .env.local.example .env.local
+```
 Edite o arquivo .env.local e configure a URL da API:
-
-bash
-Copiar código
+```
 NEXT_PUBLIC_API_URL=http://localhost:8080
+```
 4️⃣ Rodar o servidor de desenvolvimento
-bash
-Copiar código
+```
 pnpm dev
+```
 Acesse o app em:
+```
 👉 http://localhost:3000
+```
 
 📁 Estrutura de Pastas
-bash
-Copiar código
+```
 frontend/
 ├── app/                     # Páginas (App Router)
 │   ├── page.tsx            # Tela de Login
@@ -79,7 +80,9 @@ frontend/
 │   └── auth.ts             # Funções de autenticação JWT
 ├── public/                  # Arquivos estáticos
 └── styles/                  # Estilos globais e customizados
+```
 🔐 Autenticação
+```
 O sistema suporta dois métodos de login:
 
 Email e senha
@@ -100,8 +103,10 @@ Componentes: shadcn/ui
 Totalmente responsivo (desktop, tablet e mobile)
 
 Ícones: Lucide React
+```
 
 📡 Principais Endpoints da API
+```
 Autenticação
 Método	Endpoint	Descrição
 POST	/auth/login	Login com email e senha
@@ -110,12 +115,13 @@ GET	/oauth2/authorization/google	Login com Google
 POST	/auth/esqueceu-senha	Solicitar redefinição de senha
 POST	/auth/redefinir-senha	Redefinir senha
 POST	/auth/logout	Logout do usuário
-
+```
 Usuário
 Método	Endpoint	Descrição
 GET	/api/usuario	Retorna dados do usuário autenticado
 
 🧩 Próximos Passos
+```
  Implementar módulo de Produtos
 
  Implementar módulo de Estoque
@@ -131,9 +137,11 @@ GET	/api/usuario	Retorna dados do usuário autenticado
  Adicionar notificações em tempo real
 
  Suporte a múltiplas lojas
-
+```
 📜 Licença
+```
 Este projeto está sob a licença MIT.
 Sinta-se à vontade para usar, modificar e contribuir.
+```
 
 Feito com 💚 por Matheus Martins (MartnsDev)
