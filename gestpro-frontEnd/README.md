@@ -2,7 +2,7 @@
 
 Interface do **GestPro**, um sistema completo de gestão para mercados e lojas, desenvolvido com **Next.js 14+** (App Router) e integração com o backend em **Spring Boot 3**.
 
-> 🔗 Repositório do backend: [GestPro Backend](https://github.com/MartnsDev/GestPro/tree/main/backend)
+> 🔗 Repositório do backend: [GestPro Backend](https://github.com/MartnsDev/GestPro/tree/97003ec661c1babf34f53533396ced94d0c0b9cb/gestpro-backend)
 
 ---
 
