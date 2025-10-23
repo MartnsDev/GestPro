@@ -42,7 +42,7 @@ Login
 
 Dashboard
 ---
-![GestPro - Dashboard](https://raw.githubusercontent.com/MartnsDev/GestPro/1ebb5a1c26623c3a576769f9026eda1ec4f2d5cb/gestpro-dashboard.png)
+![GestPro - Dashboard](https://github.com/MartnsDev/GestPro/blob/c5c9a65498392bcf967d656b2d120c502a20fb96/gestpro.png)
 
 Cadastro
 ---
