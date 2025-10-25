@@ -2,7 +2,7 @@
 
 ## Organização de Arquivos
 
-\`\`\`
+```
 gestpro/
 ├── app/                          # Páginas Next.js (App Router)
 │   ├── page.tsx                  # Página de Login
@@ -36,7 +36,7 @@ gestpro/
 │
 └── docs/                         # Documentação
     └── ESTRUTURA.md              # Este arquivo
-\`\`\`
+```
 
 ## 🎨 Organização de Estilos
 
